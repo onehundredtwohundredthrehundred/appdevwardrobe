@@ -36,9 +36,12 @@ public class Label extends AppCompatActivity {
         imgPreview.setImageURI(imageUri);
 
         String[] areas = {"Top", "Bottom", "Headwear", "Footwear", "Accessory"};
+
         ArrayAdapter<String> areaAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, areas);
-        areaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                R.layout.spinner_item, areas);
+
+        areaAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
         spinnerArea.setAdapter(areaAdapter);
 
         spinnerArea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -93,8 +96,10 @@ public class Label extends AppCompatActivity {
         }
 
         ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, types);
-        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                R.layout.spinner_item, types);
+
+        typeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
         spinnerType.setAdapter(typeAdapter);
     }
 }
