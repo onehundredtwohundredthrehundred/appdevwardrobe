@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#2A2A2A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvOutfitName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Outfit Name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvOutfitDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Description"
+            android:textSize="14sp"
+            android:textColor="#AAAAAA"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvTimesWorn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Times worn: "
+                android:textSize="12sp"
+                android:textColor="#9ED0FF"
+                android:background="#1A1A1A"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp" />
+
+            <TextView
+                android:id="@+id/tvLastWorn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Never"
+                android:textSize="12sp"
+                android:textColor="#9ED0FF"
+                android:background="#1A1A1A"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Clothing Items:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/gridOutfitItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:columnCount="3"
+            android:rowCount="2">
+
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnWearOutfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wear"
+                android:backgroundTint="#9ED0FF"
+                android:textColor="@android:color/black"
+                android:paddingHorizontal="12dp" />
+
+            <Button
+                android:id="@+id/btnDeleteOutfit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Delete"
+                android:backgroundTint="#FF6B6B"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

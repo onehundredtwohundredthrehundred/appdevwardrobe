@@ -21,11 +21,9 @@ public class mainapp extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // Set up the ViewPager2 with an adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
-        // Link the BottomNavigationView with the ViewPager2
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.nav_wardrobe) {
@@ -41,7 +39,6 @@ public class mainapp extends AppCompatActivity {
             return false;
         });
 
-        // Update the BottomNavigationView when the ViewPager2 page is changed (by swiping)
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

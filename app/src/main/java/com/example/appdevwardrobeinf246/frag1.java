@@ -106,7 +106,7 @@ public class frag1 extends Fragment {
 
         if (tempdb.items.isEmpty()) {
             TextView tvEmpty = new TextView(requireContext());
-            tvEmpty.setText("Your wardrobe is empty.\nTap the + button to add items!");
+            tvEmpty.setText("Your wardrobe is empty.\nTap the + button to add items");
             tvEmpty.setTextSize(16);
             tvEmpty.setTextColor(requireContext().getResources().getColor(android.R.color.white));
             tvEmpty.setGravity(android.view.Gravity.CENTER);
