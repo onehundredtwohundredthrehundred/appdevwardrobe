@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="#1A1A1A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Schedule Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Schedule Name"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etScheduleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:background="#2A2A2A"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Max Wears Before Wash -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Max Wears Before Wash"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etMaxWears"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="number"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:background="#2A2A2A"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Recurring Switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Switch
+                android:id="@+id/swRecurring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Recurring Schedule"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginStart="12dp"/>
+        </LinearLayout>
+
+        <!-- Recurrence Days -->
+        <LinearLayout
+            android:id="@+id/layoutRecurrence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Repeat Every (days)"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etRecurrenceDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"
+                android:background="#2A2A2A"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- Next Wash Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next Wash Date and Time"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <Button
+            android:id="@+id/btnSetDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Date and Time"
+            android:textColor="#000000"
+            android:backgroundTint="#9ED0FF"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"/>
+
+        <!-- Select Items/Outfits -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Items to Include"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvSelectedCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0 items selected"
+            android:textColor="#9ED0FF"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnSelectItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Items and Outfits"
+            android:textColor="#000000"
+            android:backgroundTint="#9ED0FF"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

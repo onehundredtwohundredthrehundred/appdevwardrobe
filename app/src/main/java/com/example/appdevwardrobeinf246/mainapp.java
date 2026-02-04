@@ -32,7 +32,7 @@ public class mainapp extends AppCompatActivity {
             } else if (itemId == R.id.nav_outfits) {
                 viewPager.setCurrentItem(1);
                 return true;
-            } else if (itemId == R.id.nav_profile) {
+            } else if (itemId == R.id.nav_wash) {
                 viewPager.setCurrentItem(2);
                 return true;
             }
@@ -48,7 +48,7 @@ public class mainapp extends AppCompatActivity {
                 } else if (position == 1) {
                     bottomNavigationView.setSelectedItemId(R.id.nav_outfits);
                 } else if (position == 2) {
-                    bottomNavigationView.setSelectedItemId(R.id.nav_profile);
+                    bottomNavigationView.setSelectedItemId(R.id.nav_wash);
                 }
             }
         });

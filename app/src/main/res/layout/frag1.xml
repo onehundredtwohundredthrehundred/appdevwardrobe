@@ -37,7 +37,7 @@
         android:layout_margin="20dp"
         android:contentDescription="Add clothing"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#b0daff"
-        app:tint="@android:color/white" />
+        app:backgroundTint="#9ED0FF"
+        app:tint="#000000" />
 
 </FrameLayout>

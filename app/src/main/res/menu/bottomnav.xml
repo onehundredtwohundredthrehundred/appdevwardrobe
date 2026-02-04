@@ -13,8 +13,8 @@
         android:title="Outfits" />
 
     <item
-        android:id="@+id/nav_profile"
+        android:id="@+id/nav_wash"
         android:icon="@android:drawable/ic_menu_manage"
-        android:title="Profile" />
+        android:title="Wash Tracker" />
 
 </menu>
