@@ -2,19 +2,24 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="12dp"
     app:cardElevation="6dp"
-    app:cardBackgroundColor="#121212"
-    android:id="@+id/cardItem">
+    app:cardBackgroundColor="#121212">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:clickable="false"
+        android:focusable="false">
 
         <ImageView
             android:id="@+id/imgItem"
@@ -22,7 +27,9 @@
             android:layout_height="180dp"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:clickable="false"
+            android:focusable="false" />
 
         <TextView
             android:id="@+id/tvItemName"
@@ -34,7 +41,9 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:textSize="14sp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:clickable="false"
+            android:focusable="false" />
 
         <TextView
             android:id="@+id/tvItemType"
@@ -44,7 +53,9 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:textSize="12sp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:clickable="false"
+            android:focusable="false" />
 
         <TextView
             android:id="@+id/tvItemDesc"
@@ -55,7 +66,9 @@
             android:maxLines="2"
             android:ellipsize="end"
             android:textSize="11sp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:clickable="false"
+            android:focusable="false" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

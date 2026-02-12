@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -10,10 +13,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="29" />
+        android:maxSdkVersion="35" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -28,60 +30,65 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppdevwardrobeINF246"
-        tools:targetApi="31">
-        <service
-            android:name=".washsched"
-            android:foregroundServiceType="shortService"
-            android:enabled="true"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
-        <activity
-            android:name=".signup"
-            android:exported="false" />
+    android:usesCleartextTraffic="true"
 
-        <activity
-            android:name=".forgotpassword"
-            android:exported="false" />
+    tools:targetApi="35">
 
-        <activity
-            android:name=".mainapp"
-            android:exported="false" />
+    <service
+        android:name=".notif"
+        android:foregroundServiceType="shortService"
+        android:enabled="true"
+        android:exported="false" />
 
-        <activity
-            android:name=".Label"
-            android:exported="false" />
+    <activity
+        android:name=".MainActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
 
-        <activity
-            android:name=".itemdetail"
-            android:exported="false" />
+    <activity
+        android:name=".signup"
+        android:exported="false" />
 
-        <activity
-            android:name=".addoutfit"
-            android:exported="false" />
+    <activity
+        android:name=".forgotpassword"
+        android:exported="false" />
 
-        <activity
-            android:name=".outfitdetail"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="false" />
+    <activity
+        android:name=".mainapp"
+        android:exported="false" />
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths" />
-        </provider>
+    <activity
+        android:name=".Label"
+        android:exported="false" />
 
-    </application>
+    <activity
+        android:name=".itemdetail"
+        android:exported="false" />
 
-</manifest>
+    <activity
+        android:name=".addoutfit"
+        android:exported="false" />
+
+    <activity
+        android:name=".outfitdetail"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:exported="false" />
+
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="${applicationId}.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/filepaths" />
+    </provider>
+
+</application>
+
+    </manifest>

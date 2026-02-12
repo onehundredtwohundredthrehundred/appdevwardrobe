@@ -1,22 +1,45 @@
 package com.example.appdevwardrobeinf246;
 
+import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
 public class washsched {
-    public String id;
+
+    @SerializedName("id")
+    public int serverId;
+    @SerializedName("user_id")
+    public int userId;
+    @SerializedName("name")
     public String name;
     public List<clothitem> items;
     public List<outfit> outfits;
+
+    @SerializedName("max_wears_before_wash")
     public int maxWearsBeforeWash;
+
+    @SerializedName("next_wash_date")
     public long nextWashDate;
+
+    @SerializedName("is_recurring")
     public boolean isRecurring;
+
+    @SerializedName("recurrence_days")
     public int recurrenceDays;
+
+    @SerializedName("notifications_enabled")
     public boolean notificationsEnabled;
+
+    @SerializedName("last_notification_sent")
     public long lastNotificationSent;
 
+    @SerializedName("created_at")
+    public String createdAt;
+
+    @SerializedName("updated_at")
+    public String updatedAt;
+
     public washsched() {
-        this.id = java.util.UUID.randomUUID().toString();
         this.items = new ArrayList<>();
         this.outfits = new ArrayList<>();
         this.maxWearsBeforeWash = 3;
@@ -31,10 +54,6 @@ public class washsched {
         this();
         this.name = name;
         this.maxWearsBeforeWash = maxWears;
-    }
-
-    public void scheduleNextWash(long dateMillis) {
-        this.nextWashDate = dateMillis;
     }
 
     public void addItem(clothitem item) {
@@ -55,11 +74,9 @@ public class washsched {
                 return true;
             }
         }
-
         if (nextWashDate > 0 && System.currentTimeMillis() >= nextWashDate) {
             return true;
         }
-
         return false;
     }
 

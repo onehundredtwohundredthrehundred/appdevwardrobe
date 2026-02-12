@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C1C1C"
@@ -25,13 +24,17 @@
             android:id="@+id/etDetailName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:background="@android:color/transparent"
-            android:enabled="false" />
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
+            android:enabled="true"
+            android:padding="0dp" />
 
-        <!-- AREA + TYPE -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,23 +52,32 @@
 
             <Spinner
                 android:id="@+id/spinnerAreaDetail"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" | Type: "
+                android:text="Type: "
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginStart="16dp" />
+                android:textColor="@color/white" />
 
             <Spinner
                 android:id="@+id/spinnerTypeDetail"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:enabled="false" />
         </LinearLayout>
 
@@ -85,10 +97,14 @@
             android:textSize="14sp"
             android:textColor="@color/white"
             android:background="@android:color/transparent"
-            android:enabled="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
+            android:enabled="true"
             android:minLines="3"
             android:gravity="top"
-            android:inputType="textMultiLine" />
+            android:padding="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,7 +143,5 @@
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
 
-
     </LinearLayout>
-
 </ScrollView>

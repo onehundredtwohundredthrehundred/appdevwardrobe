@@ -35,6 +35,9 @@ public class mainapp extends AppCompatActivity {
             } else if (itemId == R.id.nav_wash) {
                 viewPager.setCurrentItem(2);
                 return true;
+            } else if (itemId == R.id.nav_settings) {
+                viewPager.setCurrentItem(3);
+                return true;
             }
             return false;
         });
@@ -43,12 +46,19 @@ public class mainapp extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                if (position == 0) {
-                    bottomNavigationView.setSelectedItemId(R.id.nav_wardrobe);
-                } else if (position == 1) {
-                    bottomNavigationView.setSelectedItemId(R.id.nav_outfits);
-                } else if (position == 2) {
-                    bottomNavigationView.setSelectedItemId(R.id.nav_wash);
+                switch (position) {
+                    case 0:
+                        bottomNavigationView.setSelectedItemId(R.id.nav_wardrobe);
+                        break;
+                    case 1:
+                        bottomNavigationView.setSelectedItemId(R.id.nav_outfits);
+                        break;
+                    case 2:
+                        bottomNavigationView.setSelectedItemId(R.id.nav_wash);
+                        break;
+                    case 3:
+                        bottomNavigationView.setSelectedItemId(R.id.nav_settings);
+                        break;
                 }
             }
         });
@@ -56,7 +66,7 @@ public class mainapp extends AppCompatActivity {
 
     public void switchToWashTab() {
         viewPager.setCurrentItem(2);
-        bottomNavigationView.setSelectedItemId(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.nav_wash);
     }
 
     private class ViewPagerAdapter extends FragmentStateAdapter {
@@ -66,28 +76,35 @@ public class mainapp extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return 3;
+            return 4;
         }
+
         @Override
         public Fragment createFragment(int position) {
-            if (position == 0) {
-                String username = getIntent().getStringExtra("username");
-                if (username == null) {
-                    username = "User";
-                }
+            switch (position) {
+                case 0:
+                    String username = getIntent().getStringExtra("username");
+                    if (username == null) {
+                        username = "User";
+                    }
+                    frag1 fragment = new frag1();
+                    Bundle args = new Bundle();
+                    args.putString("username", username);
+                    fragment.setArguments(args);
+                    return fragment;
 
-                frag1 fragment = new frag1();
-                Bundle args = new Bundle();
-                args.putString("username", username);
-                fragment.setArguments(args);
-                return fragment;
-            } else if (position == 1) {
-                return new frag2();
-            } else {
-                return new frag3();
+                case 1:
+                    return new frag2();
+
+                case 2:
+                    return new frag3();
+
+                case 3:
+                    return new frag4();
+
+                default:
+                    return new frag1();
             }
         }
-
-
     }
 }
